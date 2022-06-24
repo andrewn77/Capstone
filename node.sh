@@ -18,8 +18,6 @@ sudo apt-cache madison kubeadm
 
 sudo apt-get install -y kubelet=1.23.6-00 kubeadm=1.23.6-00 kubectl=1.23.6-00
 
-sudo hostnamectl set-hostname master.example.com
-
 cat <<EOF | sudo tee /etc/docker/daemon.json
 
 {
