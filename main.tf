@@ -1,7 +1,7 @@
-resource "aws_instance" "rhel" {
+resource "aws_instance" "myubuntu" {
   ami           = "ami-052efd3df9dad4825"
   count         = 3
-  instance_type = "t2.micro"
+  instance_type = "t2.medium"
   key_name      = "${aws_key_pair.generated_key.key_name}"
   vpc_security_group_ids = [aws_security_group.ab_sg.id]
   tags = {
@@ -10,7 +10,7 @@ resource "aws_instance" "rhel" {
 }
 
 output "myEC2IP" { 
-  value = "${aws_instance.rhel.*.public_ip}"
+  value = "${aws_instance.myubuntu.*.public_ip}"
 }
 
 resource "tls_private_key" "example" {
