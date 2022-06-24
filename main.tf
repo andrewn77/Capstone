@@ -1,5 +1,5 @@
 resource "aws_instance" "rhel" {
-  ami           = "ami-096fda3c22c1c990a"
+  ami           = "ami-052efd3df9dad4825"
   count         = 3
   instance_type = "t2.micro"
   key_name      = "${aws_key_pair.generated_key.key_name}"
